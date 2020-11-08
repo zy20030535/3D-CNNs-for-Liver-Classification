@@ -27,6 +27,8 @@ def save_max_objects(img):
         # 通过与质心之间的距离进行判断
         num = labels.max()  #连通域的个数
         del_array = np.array([0] * (num + 1))#生成一个与连通域个数相同的空数组来记录需要删除的区域（从0开始，所以个数要加1）
+        save_index =None
+
         for k in range(num):#TODO：这里如果遇到全黑的图像的话会报错
             if k == 0:
                 initial_area = jj[0].area
